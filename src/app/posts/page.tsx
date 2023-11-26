@@ -1,5 +1,5 @@
 const PostsPage = () => {
-	return <section className="bg-gray-500">PostsPage</section>;
+	return <section>PostsPage</section>;
 };
 
 export default PostsPage;

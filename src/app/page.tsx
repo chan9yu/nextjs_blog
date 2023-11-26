@@ -1,5 +1,13 @@
+import { Carousel, FeaturedPosts, Hero } from '../components';
+
 const HomePage = () => {
-	return <section className="bg-gray-500">HomePage</section>;
+	return (
+		<>
+			<Hero />
+			<FeaturedPosts />
+			<Carousel />
+		</>
+	);
 };
 
 export default HomePage;

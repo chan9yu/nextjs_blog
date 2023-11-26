@@ -1,5 +1,5 @@
 const ContactPage = () => {
-	return <section className="bg-gray-500">ContactPage</section>;
+	return <section>ContactPage</section>;
 };
 
 export default ContactPage;
