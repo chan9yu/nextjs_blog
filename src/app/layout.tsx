@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 
 import type { ChildrenProps } from '../@types';
+import { Footer, Header } from '../components';
 import './globals.css';
 
 const sans = Open_Sans({ subsets: ['latin'] });
@@ -21,8 +22,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: ChildrenProps) => {
 	return (
-		<html lang="ko">
-			<body className={sans.className}>{children}</body>
+		<html lang="ko" className={sans.className}>
+			<body className="flex flex-col w-full max-w-screen-2xl mx-auto">
+				<Header />
+				<main className="grow">{children}</main>
+				<Footer />
+			</body>
 		</html>
 	);
 };
