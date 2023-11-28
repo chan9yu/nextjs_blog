@@ -18,3 +18,8 @@ export type PostData = Post & {
 	nextPost: Post | null;
 	prevPost: Post | null;
 };
+
+export type BannerData = {
+	message: string;
+	state: 'success' | 'error';
+};

@@ -9,7 +9,7 @@ type AdjacentPostCardProps = {
 	type: 'prev' | 'next';
 };
 
-const ICON_CLASS = 'text-5xl text-yellow-300  transition-all group-hover:text-6xl';
+const ICON_CLASS = 'text-5xl text-yellow-300 transition-all group-hover:text-6xl';
 
 const AdjacentPostCard = ({
 	post: { category, date, description, featured, path, title },
