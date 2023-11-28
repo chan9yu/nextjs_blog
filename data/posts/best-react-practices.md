@@ -6,12 +6,12 @@ React components implement a `render()` method that takes input data and returns
 
 ```jsx
 class HelloMessage extends React.Component {
-  render() {
-    return <div>Hello {this.props.name}</div>;
-  }
+	render() {
+		return <div>Hello {this.props.name}</div>;
+	}
 }
 
-root.render(<HelloMessage name='Taylor' />);
+root.render(<HelloMessage name="Taylor" />);
 ```
 
 ## Declarative
