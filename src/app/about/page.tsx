@@ -1,5 +1,12 @@
+import { AboutSection, Hero } from '../../components';
+
 const AboutPage = () => {
-	return <section>AboutPage</section>;
+	return (
+		<>
+			<Hero />
+			<AboutSection />
+		</>
+	);
 };
 
 export default AboutPage;
