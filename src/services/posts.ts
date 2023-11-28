@@ -1,14 +1,7 @@
 import { promises } from 'fs';
 import { join } from 'path';
 
-export type Post = {
-	title: string;
-	description: string;
-	date: Date;
-	category: string;
-	path: string;
-	featured: boolean;
-};
+import type { Post, PostData } from '../@types';
 
 export const getAllPosts = async (): Promise<Post[]> => {
 	const filePath = join(process.cwd(), 'data', 'posts.json');
@@ -30,4 +23,27 @@ export const getNonFeaturedPosts = async (): Promise<Post[]> => {
 	const featuredPosts = allPosts.filter(post => !post.featured);
 
 	return featuredPosts;
+};
+
+export const getPostData = async (fileName: string): Promise<PostData> => {
+	const posts = await getAllPosts();
+	const post = posts.find(post => post.path === fileName);
+
+	if (!post) {
+		throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없습니다.`);
+	}
+
+	const index = posts.indexOf(post);
+	const nextPost = index > 0 ? posts[index - 1] : null;
+	const prevPost = index < posts.length ? posts[index + 1] : null;
+
+	const filePath = join(process.cwd(), 'data', 'posts', `${fileName}.md`);
+	const content = await promises.readFile(filePath, 'utf-8');
+
+	return {
+		...post,
+		content,
+		nextPost,
+		prevPost
+	};
 };
