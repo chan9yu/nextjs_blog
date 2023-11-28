@@ -1,9 +1,11 @@
-import { MultiCarousel, PostCard } from '../components';
-import { getNonFeaturedPosts } from '../services';
+import type { Post } from '../../@types';
+import { MultiCarousel, PostCard } from '../../components';
 
-const Carousel = async () => {
-	const posts = await getNonFeaturedPosts();
+type CarouselProps = {
+	posts: Post[];
+};
 
+const Carousel = async ({ posts }: CarouselProps) => {
 	return (
 		<section className="px-4 my-4">
 			<h2 className="text-2xl font-bold my-2">You May Like</h2>

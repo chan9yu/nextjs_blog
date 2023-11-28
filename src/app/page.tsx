@@ -1,11 +1,14 @@
 import { Carousel, FeaturedPosts, Hero } from '../components';
+import { getNonFeaturedPosts } from '../services';
 
-const HomePage = () => {
+const HomePage = async () => {
+	const posts = await getNonFeaturedPosts();
+
 	return (
 		<>
 			<Hero />
-			<FeaturedPosts />
-			<Carousel />
+			<FeaturedPosts posts={posts} />
+			<Carousel posts={posts} />
 		</>
 	);
 };
