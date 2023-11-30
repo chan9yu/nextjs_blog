@@ -2,32 +2,47 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-import type { BannerData } from '../../@types';
+import type { BannerData, EamilData } from '../../@types/custom/contact';
+import { sendContactEmail } from '../../services/contact';
 import Banner from './Banner';
-
-type Form = {
-	from: string;
-	message: string;
-	subject: string;
-};
 
 const FIELD_CLASS = 'text-black px-2 py-3 rounded box-border';
 
+const DEFAULT_DATA = {
+	from: '',
+	message: '',
+	subject: ''
+};
+
 export default function ContactForm() {
 	const [bannder, setBannder] = useState<BannerData | null>(null);
-	const [form, setForm] = useState<Form>({ from: '', message: '', subject: '' });
+	const [form, setForm] = useState<EamilData>(DEFAULT_DATA);
 
 	const handleChangeForm = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
 		setForm(prev => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setBannder({ message: '성공했어!!', state: 'success' });
-		setTimeout(() => {
-			setBannder(null);
-		}, 1000 * 3);
+
+		try {
+			await sendContactEmail(form);
+			setBannder({
+				message: '메일을 성공적으로 보냈습니다.',
+				state: 'success'
+			});
+			setForm(DEFAULT_DATA);
+		} catch (error) {
+			setBannder({
+				message: '메일전송에 실패했습니다. 다시 시도해 주세요.',
+				state: 'error'
+			});
+		} finally {
+			setTimeout(() => {
+				setBannder(null);
+			}, 1000 * 3);
+		}
 	};
 
 	return (
