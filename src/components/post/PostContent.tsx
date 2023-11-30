@@ -1,13 +1,13 @@
 import { AiTwotoneCalendar } from 'react-icons/ai';
 
 import type { PostData } from '../../@types';
-import { MarkdownViewer } from '../../components';
+import MarkdownViewer from './MarkdownViewer';
 
 type PostContentProps = {
 	postData: PostData;
 };
 
-const PostContent = ({ postData }: PostContentProps) => {
+export default function PostContent({ postData }: PostContentProps) {
 	const { category, content, date, description, featured, path, title } = postData;
 
 	return (
@@ -22,6 +22,4 @@ const PostContent = ({ postData }: PostContentProps) => {
 			<MarkdownViewer content={content} />
 		</section>
 	);
-};
-
-export default PostContent;
+}

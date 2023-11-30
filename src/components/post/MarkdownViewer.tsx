@@ -2,13 +2,13 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import { SyntaxHighlighterCode } from '../../components';
+import SyntaxHighlighterCode from './SyntaxHighlighterCode';
 
 type MarkdownViewerProps = {
 	content: string;
 };
 
-const MarkdownViewer = ({ content }: MarkdownViewerProps) => {
+export default function MarkdownViewer({ content }: MarkdownViewerProps) {
 	return (
 		<ReactMarkdown
 			className="prose lg:prose-xl max-w-none"
@@ -29,6 +29,4 @@ const MarkdownViewer = ({ content }: MarkdownViewerProps) => {
 			{content}
 		</ReactMarkdown>
 	);
-};
-
-export default MarkdownViewer;
+}

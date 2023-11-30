@@ -1,7 +1,7 @@
-import { FilterablePosts } from '../../components';
+import FilterablePosts from '../../components/post/FilterablePosts';
 import { getAllPosts } from '../../services';
 
-const PostsPage = async () => {
+export default async function PostsPage() {
 	const posts = await getAllPosts();
 	const categories = [...new Set(posts.map(posts => posts.category))];
 
@@ -10,6 +10,4 @@ const PostsPage = async () => {
 			<FilterablePosts categories={categories} posts={posts} />
 		</section>
 	);
-};
-
-export default PostsPage;
+}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const PROFILE_IMG_URL = 'https://avatars.githubusercontent.com/u/80776262?v=4' as const;
 
-const Hero = () => {
+export default function Hero() {
 	return (
 		<section className="flex flex-col justify-center items-center gap-1">
 			<Image
@@ -22,6 +22,4 @@ const Hero = () => {
 			</Link>
 		</section>
 	);
-};
-
-export default Hero;
+}

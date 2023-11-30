@@ -1,12 +1,12 @@
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { ContactForm } from '../../components';
+import ContactForm from '../../components/contact/ContactForm';
 
 const LINKS = [
 	{ icon: <AiFillGithub />, url: 'https://github.com/chan9yu' },
 	{ icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/chan9yu/' }
 ];
 
-const ContactPage = () => {
+export default function ContactPage() {
 	return (
 		<section className="flex flex-col items-center">
 			<h2 className="text-3xl font-bold my-2">Contact Me</h2>
@@ -28,6 +28,4 @@ const ContactPage = () => {
 			<ContactForm />
 		</section>
 	);
-};
-
-export default ContactPage;
+}

@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 
 import type { ChildrenProps } from '../@types';
-import { Footer, Header } from '../components';
+import Footer from '../components/common/Footer';
+import Header from '../components/common/Header';
 import './globals.css';
 
 const sans = Open_Sans({ subsets: ['latin'] });
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 	]
 };
 
-const RootLayout = ({ children }: ChildrenProps) => {
+export default function RootLayout({ children }: ChildrenProps) {
 	return (
 		<html lang="ko" className={sans.className}>
 			<body className="flex flex-col w-full">
@@ -30,6 +31,4 @@ const RootLayout = ({ children }: ChildrenProps) => {
 			</body>
 		</html>
 	);
-};
-
-export default RootLayout;
+}

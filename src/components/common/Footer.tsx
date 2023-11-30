@@ -1,4 +1,4 @@
-const Footer = () => {
+export default function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	return (
@@ -6,6 +6,4 @@ const Footer = () => {
 			&copy;{currentYear} chan9yu. All Right Reserved.
 		</footer>
 	);
-};
-
-export default Footer;
+}

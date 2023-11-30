@@ -3,7 +3,8 @@
 import { useState } from 'react';
 
 import type { Post } from '../../@types';
-import { Categories, PostsGrid } from '../../components';
+import PostsGrid from '../common/PostsGrid';
+import Categories from './Categories';
 
 type FilterablePostsProps = {
 	categories: string[];
@@ -12,7 +13,7 @@ type FilterablePostsProps = {
 
 const ALL_POSTS = 'All Posts';
 
-const FilterablePosts = ({ posts, categories }: FilterablePostsProps) => {
+export default function FilterablePosts({ posts, categories }: FilterablePostsProps) {
 	const [selected, setSelected] = useState(ALL_POSTS);
 	const filtered = selected === ALL_POSTS ? posts : posts.filter(post => post.category === selected);
 
@@ -22,6 +23,4 @@ const FilterablePosts = ({ posts, categories }: FilterablePostsProps) => {
 			<Categories categories={[ALL_POSTS, ...categories]} selected={selected} onClick={setSelected} />
 		</section>
 	);
-};
-
-export default FilterablePosts;
+}

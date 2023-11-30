@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import { AdjacentPostCard, PostContent } from '../../../components';
+import AdjacentPostCard from '../../../components/post/AdjacentPostCard';
+import PostContent from '../../../components/post/PostContent';
 import { getPostData } from '../../../services';
 
 type PostPageProps = {
@@ -9,7 +10,7 @@ type PostPageProps = {
 	};
 };
 
-const PostPage = async ({ params: { slug } }: PostPageProps) => {
+export default async function PostPage({ params: { slug } }: PostPageProps) {
 	const postData = await getPostData(slug);
 	const { nextPost, path, prevPost, title } = postData;
 
@@ -29,6 +30,4 @@ const PostPage = async ({ params: { slug } }: PostPageProps) => {
 			</section>
 		</article>
 	);
-};
-
-export default PostPage;
+}

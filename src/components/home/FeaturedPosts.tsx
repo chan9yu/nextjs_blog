@@ -1,5 +1,5 @@
 import type { Post } from '../../@types';
-import { PostsGrid } from '../../components';
+import PostsGrid from '../common/PostsGrid';
 
 type FeaturedPostsProps = {
 	posts: Post[];

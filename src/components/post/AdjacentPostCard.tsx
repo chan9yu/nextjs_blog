@@ -11,10 +11,10 @@ type AdjacentPostCardProps = {
 
 const ICON_CLASS = 'text-5xl text-yellow-300 transition-all group-hover:text-6xl';
 
-const AdjacentPostCard = ({
+export default function AdjacentPostCard({
 	post: { category, date, description, featured, path, title },
 	type
-}: AdjacentPostCardProps) => {
+}: AdjacentPostCardProps) {
 	return (
 		<Link className="relative w-full bg-black max-h-56" href={`/posts/${path}`}>
 			<Image className="w-full opacity-40" src={`/images/posts/${path}.png`} alt={title} width={150} height={100} />
@@ -28,6 +28,4 @@ const AdjacentPostCard = ({
 			</div>
 		</Link>
 	);
-};
-
-export default AdjacentPostCard;
+}

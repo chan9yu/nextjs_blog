@@ -1,6 +1,6 @@
 const TITLE_CLASS = 'text-2xl font-bold text-gray-800 my-2';
 
-const AboutSection = () => {
+export default function AboutSection() {
 	return (
 		<section className="bg-gray-100 shadow-lg p-8 m-8 text-center rounded-lg">
 			<h2 className={TITLE_CLASS}>Who Am I?</h2>
@@ -19,6 +19,4 @@ const AboutSection = () => {
 			</p>
 		</section>
 	);
-};
-
-export default AboutSection;
+}

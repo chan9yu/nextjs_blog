@@ -24,12 +24,10 @@ const responsive: ResponsiveType = {
 	}
 };
 
-const MultiCarousel = ({ children }: ChildrenProps) => {
+export default function MultiCarousel({ children }: ChildrenProps) {
 	return (
 		<Carousel itemClass="m-2" infinite autoPlay responsive={responsive}>
 			{children}
 		</Carousel>
 	);
-};
-
-export default MultiCarousel;
+}

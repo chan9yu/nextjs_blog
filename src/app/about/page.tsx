@@ -1,12 +1,11 @@
-import { AboutSection, Hero } from '../../components';
+import AboutSection from '../../components/about/AboutSection';
+import Hero from '../../components/common/Hero';
 
-const AboutPage = () => {
+export default function AboutPage() {
 	return (
 		<>
 			<Hero />
 			<AboutSection />
 		</>
 	);
-};
-
-export default AboutPage;
+}

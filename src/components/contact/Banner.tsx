@@ -4,7 +4,7 @@ type BannerProps = {
 	banner: BannerData;
 };
 
-const Banner = ({ banner: { message, state } }: BannerProps) => {
+export default function Banner({ banner: { message, state } }: BannerProps) {
 	const isSuccess = state === 'success';
 	const emoji = isSuccess ? '✅' : '🔥';
 
@@ -13,6 +13,4 @@ const Banner = ({ banner: { message, state } }: BannerProps) => {
 			{`${emoji} ${message}`}
 		</p>
 	);
-};
-
-export default Banner;
+}

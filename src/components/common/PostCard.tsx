@@ -7,7 +7,7 @@ type PostCardProps = {
 	post: Post;
 };
 
-const PostCard = ({ post: { category, date, description, featured, path, title } }: PostCardProps) => {
+export default function PostCard({ post: { category, date, description, featured, path, title } }: PostCardProps) {
 	return (
 		<Link href={`/posts/${path}`}>
 			<article className="rounded-md overflow-hidden shadow-md hover:shadow-xl transition-shadow">
@@ -21,6 +21,4 @@ const PostCard = ({ post: { category, date, description, featured, path, title }
 			</article>
 		</Link>
 	);
-};
-
-export default PostCard;
+}

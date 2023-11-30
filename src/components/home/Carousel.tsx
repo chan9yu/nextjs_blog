@@ -1,5 +1,6 @@
 import type { Post } from '../../@types';
-import { MultiCarousel, PostCard } from '../../components';
+import PostCard from '../common/PostCard';
+import MultiCarousel from './MultiCarousel';
 
 type CarouselProps = {
 	posts: Post[];

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Header = () => {
+export default function Header() {
 	return (
 		<header className="flex justify-between items-center p-6 w-full max-w-screen-2xl mx-auto">
 			<Link href="/">
@@ -14,6 +14,4 @@ const Header = () => {
 			</nav>
 		</header>
 	);
-};
-
-export default Header;
+}

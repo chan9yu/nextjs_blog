@@ -8,7 +8,7 @@ type SyntaxHighlighterCodeProps = Omit<
 	'ref' | 'style'
 >;
 
-const SyntaxHighlighterCode = ({ node, className, children, ...props }: SyntaxHighlighterCodeProps) => {
+export default function SyntaxHighlighterCode({ node, className, children, ...props }: SyntaxHighlighterCodeProps) {
 	const match = /language-(\w+)/.exec(className || '');
 
 	if (!match) {
@@ -20,6 +20,4 @@ const SyntaxHighlighterCode = ({ node, className, children, ...props }: SyntaxHi
 			{String(children).replace(/\n$/, '')}
 		</SyntaxHighlighter>
 	);
-};
-
-export default SyntaxHighlighterCode;
+}

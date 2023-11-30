@@ -4,7 +4,7 @@ type Props = {
 	onClick: (category: string) => void;
 };
 
-const Categories = ({ categories, selected, onClick }: Props) => {
+export default function Categories({ categories, selected, onClick }: Props) {
 	return (
 		<section className="text-center p-4 w-[120px] flex-shrink-0">
 			<h2 className="text-lg font-bold border-b border-sky-500 mb-2">Category</h2>
@@ -21,6 +21,4 @@ const Categories = ({ categories, selected, onClick }: Props) => {
 			</ul>
 		</section>
 	);
-};
-
-export default Categories;
+}

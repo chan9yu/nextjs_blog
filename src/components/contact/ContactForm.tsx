@@ -3,7 +3,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 import type { BannerData } from '../../@types';
-import { Banner } from '../../components';
+import Banner from './Banner';
 
 type Form = {
 	from: string;
@@ -13,7 +13,7 @@ type Form = {
 
 const FIELD_CLASS = 'text-black px-2 py-3 rounded box-border';
 
-const ContactForm = () => {
+export default function ContactForm() {
 	const [bannder, setBannder] = useState<BannerData | null>(null);
 	const [form, setForm] = useState<Form>({ from: '', message: '', subject: '' });
 
@@ -84,6 +84,4 @@ const ContactForm = () => {
 			</form>
 		</section>
 	);
-};
-
-export default ContactForm;
+}
