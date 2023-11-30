@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import AdjacentPostCard from '../../../components/post/AdjacentPostCard';
 import PostContent from '../../../components/post/PostContent';
-import { getPostData } from '../../../services';
+import { getPostData } from '../../../services/posts';
 
 type PostPageProps = {
 	params: {
