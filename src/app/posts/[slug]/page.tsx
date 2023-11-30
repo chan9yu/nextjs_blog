@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 import AdjacentPostCard from '../../../components/post/AdjacentPostCard';
@@ -9,6 +10,15 @@ type PostPageProps = {
 		slug: string;
 	};
 };
+
+export async function generateMetadata({ params: { slug } }: PostPageProps): Promise<Metadata> {
+	const { title, description } = await getPostData(slug);
+
+	return {
+		title,
+		description
+	};
+}
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
 	const postData = await getPostData(slug);
