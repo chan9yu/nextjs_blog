@@ -1,7 +1,7 @@
 import { promises } from 'fs';
 import { join } from 'path';
 
-import type { Post, PostData } from '../@types';
+import type { Post, PostData } from '../@types/custom/post';
 
 export const getAllPosts = async (): Promise<Post[]> => {
 	const filePath = join(process.cwd(), 'data', 'posts.json');

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 
-import type { ChildrenProps } from '../@types';
+import type { ChildrenProps } from '../@types/custom/common';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import './globals.css';

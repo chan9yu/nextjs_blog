@@ -3,7 +3,7 @@
 import Carousel, { ResponsiveType } from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import type { ChildrenProps } from '../../@types';
+import type { ChildrenProps } from '../../@types/custom/common';
 
 const responsive: ResponsiveType = {
 	superLargeDesktop: {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import type { Post } from '../../@types';
+import type { Post } from '../../@types/custom/post';
 import PostsGrid from '../common/PostsGrid';
 import Categories from './Categories';
 

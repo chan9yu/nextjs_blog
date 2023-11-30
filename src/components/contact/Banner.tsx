@@ -1,4 +1,4 @@
-import type { BannerData } from '../../@types';
+import type { BannerData } from '../../@types/custom/contact';
 
 type BannerProps = {
 	banner: BannerData;

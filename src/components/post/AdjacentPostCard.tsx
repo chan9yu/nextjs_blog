@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-import type { Post } from '../../@types';
+import type { Post } from '../../@types/custom/post';
 
 type AdjacentPostCardProps = {
 	post: Post;

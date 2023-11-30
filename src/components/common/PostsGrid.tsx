@@ -1,4 +1,4 @@
-import type { Post } from '../../@types';
+import type { Post } from '../../@types/custom/post';
 import PostCard from './PostCard';
 
 type PostsGridProps = {

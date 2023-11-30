@@ -1,6 +1,6 @@
 import { AiTwotoneCalendar } from 'react-icons/ai';
 
-import type { PostData } from '../../@types';
+import type { PostData } from '../../@types/custom/post';
 import MarkdownViewer from './MarkdownViewer';
 
 type PostContentProps = {
